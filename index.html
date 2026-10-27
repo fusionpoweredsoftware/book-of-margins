@@ -6,9 +6,9 @@
 <title>The Book of Margins</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
-/* Layout: one column, one gap unit (--g) used for every space; pixel frames with 2px borders and cut corners. */
+/* Layout: one column, one gap unit (--g) used for every space; plain framed sections. */
 :root {
   --bg: #eef0f4;
   --panel: #ffffff;
@@ -18,7 +18,7 @@
   --light: #d9731a;   /* Light's orange */
   --dark: #b2338f;    /* Dark's magenta */
   --move: #2f6fd6;    /* neutral: the colour of movement */
-  --display: "Silkscreen", "Courier New", monospace;
+  --display: "Source Serif 4", Georgia, "Times New Roman", serif;
   --body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
   --g: 24px;          /* the one gap unit */
   --px: 2px;          /* one art pixel */
@@ -41,22 +41,18 @@ body {
 }
 .book { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: var(--g); }
 
-/* Pixel frame: square border with one cut pixel at each corner (a clean diagonal, no staircase). */
 .frame {
   position: relative; background: var(--panel);
-  border: var(--px) solid var(--line);
+  border: 1px solid var(--line);
   padding: var(--g);
   display: flex; flex-direction: column; gap: var(--g);
   min-width: 0;
 }
-.frame { clip-path: polygon(var(--px) 0, calc(100% - var(--px)) 0, 100% var(--px), 100% calc(100% - var(--px)), calc(100% - var(--px)) 100%, var(--px) 100%, 0 calc(100% - var(--px)), 0 var(--px)); }
 
-h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; letter-spacing: 0.02em; }
-/* Silkscreen sits on an 8px grid: sizes are whole multiples of 8 so its pixels stay square. */
-h1 { font-size: 48px; line-height: 1.15; }
-@media (max-width: 520px) { h1 { font-size: 32px; } }
-h2 { font-size: 24px; line-height: 1.35; }
-h3 { font-size: 16px; line-height: 1.5; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.25rem, 7vw, 3.25rem); line-height: 1.1; }
+h2 { font-size: 1.6rem; line-height: 1.25; }
+h3 { font-size: 1.1rem; line-height: 1.35; }
 p, ol, ul, blockquote { margin: 0; }
 .label { margin: 0; font-size: 0.8rem; font-weight: 700; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
 
@@ -64,7 +60,7 @@ p, ol, ul, blockquote { margin: 0; }
 .cover cite { font-style: normal; color: var(--muted); }
 
 .rules { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: var(--g); }
-.rules a { display: flex; gap: calc(var(--g) / 2); align-items: baseline; border: var(--px) solid var(--line); padding: calc(var(--g) / 2); color: inherit; text-decoration: none; font-family: var(--display); font-size: 16px; height: 100%; }
+.rules a { display: flex; gap: calc(var(--g) / 2); align-items: baseline; border: 1px solid var(--line); padding: calc(var(--g) / 2); color: inherit; text-decoration: none; font-weight: 700; height: 100%; }
 .rules a:hover, .rules a:focus-visible { background: var(--bg); outline: none; }
 .rules a:focus-visible { border-color: var(--move); }
 .rules .n { color: var(--move); }
@@ -79,7 +75,7 @@ p, ol, ul, blockquote { margin: 0; }
 code { font-family: "Courier New", monospace; font-size: 0.95em; }
 
 .checklist ol { padding-left: 1.4em; display: flex; flex-direction: column; gap: calc(var(--g) / 3); }
-.checklist li::marker { font-family: var(--display); color: var(--move); }
+.checklist li::marker { font-weight: 700; color: var(--move); }
 .closing { font-weight: 700; }
 footer { text-align: center; color: var(--muted); font-size: 0.85rem; }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
