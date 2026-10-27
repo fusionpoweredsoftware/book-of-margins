@@ -72,6 +72,9 @@ p, ol, ul, blockquote { margin: 0; }
 .voice { color: var(--muted); font-style: italic; }
 .light { color: var(--light); font-weight: 700; }
 .dark { color: var(--dark); font-weight: 700; }
+.neutral { color: var(--move); font-weight: 700; }
+.example { border-left: 1px solid var(--move); padding-left: calc(var(--g) / 2); color: var(--muted); }
+.example > span:first-child { font-weight: 700; color: var(--move); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.08em; margin-right: 0.4em; }
 code { font-family: "Courier New", monospace; font-size: 0.95em; }
 
 .checklist ol { padding-left: 1.4em; display: flex; flex-direction: column; gap: calc(var(--g) / 3); }
@@ -86,82 +89,97 @@ footer { text-align: center; color: var(--muted); font-size: 0.85rem; }
 <main class="book">
 
 <section class="frame cover">
-  <p class="label">For anyone, human or AI, who lays out or draws anything</p>
-  <h1>The Book of Margins</h1>
-  <blockquote>
-    <p>The margins, the spaces in between contain potential: an infinite canvas of what is not, yet binds what is.</p>
-    <cite>Andrey</cite>
-  </blockquote>
-  <p>Read this before you touch a pixel, and check your work against it before you show anyone.</p>
+<p class="label">For anyone, human or AI, who lays out or draws anything</p>
+<h1>The Book of Margins</h1>
+<blockquote><p>The margins, the spaces in between contain potential: an infinite canvas of what is not, yet binds what is.</p><cite>Andrey</cite></blockquote>
+<p>This book is for anyone, human or AI, who lays out, draws or changes anything visual: a game, a website, an app, a document. Read it before you touch a pixel, and check your work against it before you show anyone.</p>
+<p>The rules are general. The examples come from Monster Chess, where they were learned. Your project will have its own pixels, colours and meanings, so translate each example into the terms of the thing you are working on.</p>
 </section>
-
 <section class="frame">
-  <h2>The 4 Golden Rules</h2>
-  <ol class="rules">
-    <li><a href="#margins"><span class="n">1</span><span>Respect the margins.</span></a></li>
-    <li><a href="#resolution"><span class="n">2</span><span>Respect the resolution.</span></a></li>
-    <li><a href="#symbolism"><span class="n">3</span><span>Respect the symbolism.</span></a></li>
-    <li><a href="#functionality"><span class="n">4</span><span>Respect the functionality.</span></a></li>
-  </ol>
-  <p>They are four rules, but this is one book, because the margins tie all four together. A margin is the space around something, and you cannot respect a space without respecting what it holds: the pixels it frames, the meaning of what sits inside it, and the job that thing has to do. Bad pixels, muddled symbols or a button nobody can press break the margins as surely as an uneven gap does.</p>
+<h2>The 4 Golden Rules</h2>
+<ol class="rules"><li><a href="#margins"><span class="n">1</span><span>Respect the margins.</span></a></li><li><a href="#resolution"><span class="n">2</span><span>Respect the resolution.</span></a></li><li><a href="#symbolism"><span class="n">3</span><span>Respect the symbolism.</span></a></li><li><a href="#functionality"><span class="n">4</span><span>Respect the functionality.</span></a></li></ol>
+<p>They are four rules, but this is one book, because the margins tie all four together. A margin is the space around something, and you cannot respect a space without respecting what it holds: the pixels it frames, the meaning of what sits inside it, and the job that thing has to do. Bad pixels, muddled symbols or a button nobody can press break the margins as surely as an uneven gap does.</p>
 </section>
-
 <section class="frame chapter" id="margins">
-  <header><p class="label">Rule 1</p><h2>Respect the margins</h2></header>
-  <div class="law"><h3>1.1 One gap unit</h3><p>Pick <strong>one gap</strong> for a layout and use it everywhere: element to element, element to frame, frame to screen edge. A second, different gap needs a reason you can say out loud. If you cannot name it, it is a mistake.</p></div>
-  <div class="law"><h3>1.2 Margins are shared</h3><p>Two neighbours <strong>share</strong> the space between them. The gap between two tiles is the same single gap as tile to frame, not the sum of two private paddings. <span class="voice">Sharing is caring: margins overlap where the region is shared.</span></p></div>
-  <div class="law"><h3>1.3 Measure from what you see</h3><p>Measure a gap from the frame's <strong>inner edge</strong>, and align to the line the eye actually reads. If a frame has a faint outer ring and a bright inner ring, align to the bright one. A gap that is correct on paper but wrong to the eye is wrong.</p></div>
-  <div class="law"><h3>1.4 Equal both ways</h3><p>Horizontal gaps equal vertical gaps. "Good, but taller than wide" is not good. <span class="voice">Consistent margins say yes, I respect the conformity.</span></p></div>
-  <div class="law"><h3>1.5 Mirror the sides</h3><p>Left matches right and top matches bottom. If one side is wider, make the sides match. Don't just slide the whole layout over to hide the difference. Paired things (<span class="light">Light</span> and <span class="dark">Dark</span>, two trays, two columns) get the same sizes and the same gaps.</p></div>
-  <div class="law"><h3>1.6 Not too tight, not too loose</h3><p>Nothing touches, crowds or overlaps an edge or a frame. A heading must not sit on a border line, and a tray must not sit on the board. But too much margin is just as wrong. Huge gaps are <span class="voice">i-don't-like-you-you-scare-me-stay-away</span> margins. Margins are good; too much is weird. When space is left over, grow the content to fill it at a whole-pixel size. Don't grow the gaps.</p></div>
-  <div class="law"><h3>1.7 No empty reserved strips</h3><p>Don't hold an empty band open "in case" something appears there later. If a label needs a home, put it inside an existing box with that box's padding. If a tray is empty, its space needs a reason to stay, such as stopping the board from jumping, and that reason should be stated.</p></div>
-  <div class="law"><h3>1.8 Cover fully or not at all</h3><p>An overlay either covers its area completely or leaves it alone. A panel that half-covers something, or a row that sticks out of its own box, looks messy. When a menu opens, <strong>one box</strong> holds everything, laid out as an even grid.</p></div>
-  <div class="law"><h3>1.9 Stay inside the column</h3><p>A panel is never wider than the column it belongs to. If it doesn't fit, wrap it into even rows.</p></div>
-  <div class="law"><h3>1.10 Centre on the real thing</h3><p>Centre a count on the piece it counts, a menu between the board and the screen edge, and a label on what it labels. Centre on the drawn art, not on a bounding box that happens to be bigger.</p></div>
+<header><p class="label">Rule 1</p><h2>Respect the margins</h2></header>
+<div class="law"><h3>1.1 One gap unit</h3><p>Pick <strong>one gap</strong> for a layout and use it everywhere: element to element, element to frame, frame to screen edge. A second, different gap needs a reason you can say out loud. If you cannot name it, it is a mistake.</p>
+</div>
+<div class="law"><h3>1.2 Margins are shared</h3><p>Two neighbours <strong>share</strong> the space between them. The gap between two cards is the same single gap as card to container, not the sum of two private paddings. <em>Sharing is caring: margins overlap where the region is shared.</em></p>
+<p class="example"><span>Example</span> in a menu grid, the space between two tiles equals the space between a tile and the frame, measured once.</p>
+</div>
+<div class="law"><h3>1.3 Measure from what you see</h3><p>Measure a gap from a frame's <strong>inner edge</strong>, and align to the line the eye actually reads. If a border has a faint outer edge and a strong inner one, align to the strong one. A gap that is correct in the code but wrong to the eye is wrong.</p>
+<p class="example"><span>Example</span> side boxes lined up with the faint outer ring of the board's frame looked two pixels off, because the eye reads the bright ring as the edge.</p>
+</div>
+<div class="law"><h3>1.4 Equal both ways</h3><p>Horizontal gaps equal vertical gaps. "Good, but taller than wide" is not good. <em>Consistent margins say yes, I respect the conformity.</em></p>
+</div>
+<div class="law"><h3>1.5 Mirror the sides</h3><p>Left matches right and top matches bottom. If one side is wider, make the sides match. Don't just slide the whole layout over to hide the difference. Paired things (two sidebars, two columns, two players' panels) get the same sizes and the same gaps.</p>
+</div>
+<div class="law"><h3>1.6 Not too tight, not too loose</h3><p>Nothing touches, crowds or overlaps an edge or a frame. A heading must not sit on a border line. But too much margin is just as wrong. Huge gaps are <em>i-don't-like-you-you-scare-me-stay-away</em> margins. Margins are good; too much is weird. When space is left over, grow the content to fill it. Don't grow the gaps.</p>
+</div>
+<div class="law"><h3>1.7 No empty reserved space</h3><p>Don't hold an empty band open "in case" something appears there later. If a label needs a home, put it inside an existing box with that box's padding. If an empty area has to stay, for example so the layout doesn't jump, say why.</p>
+</div>
+<div class="law"><h3>1.8 Cover fully or not at all</h3><p>An overlay, modal or menu either covers its area completely or leaves it alone. A panel that half-covers something, or a row that sticks out of its own box, looks messy. When a menu opens, <strong>one box</strong> holds everything, laid out as an even grid.</p>
+</div>
+<div class="law"><h3>1.9 Stay inside the column</h3><p>A panel is never wider than the column it belongs to. If it doesn't fit, wrap it into even rows.</p>
+</div>
+<div class="law"><h3>1.10 Centre on the real thing</h3><p>Centre a label on what it labels, a badge on the item it counts, and a block in the space it actually has. Centre on the visible content, not on a bounding box that happens to be bigger. Text inside a box sits with equal space above and below.</p>
+</div>
 </section>
-
 <section class="frame chapter" id="resolution">
-  <header><p class="label">Rule 2</p><h2>Respect the resolution</h2></header>
-  <div class="law"><h3>2.1 One pixel grid</h3><p>Everything is drawn on the game's own art-pixel grid at its pixel scale: sprites, text, frames, scrollbars, arrows, all of it. No smooth or anti-aliased lines, and no rounded rectangles drawn by the browser.</p></div>
-  <div class="law"><h3>2.2 Whole-number zoom only</h3><p>One art pixel is a whole number of screen pixels (2, 3, 4…), never 3.5. If that makes the game a little smaller at some window sizes, the smaller size is correct.</p></div>
-  <div class="law"><h3>2.3 No half pixels</h3><p>Centring something can land it half a pixel off the grid. Round it onto the grid. Arrow shafts and heads land on pixel columns, not between them.</p></div>
-  <div class="law"><h3>2.4 Bigger font, not bigger pixels</h3><p>When text needs to be larger, use a <strong>larger pixel font</strong> at the same pixel size. Never magnify a small font 2× or 3×. Blowing up the pixels breaks the resolution, even when the result is technically on a grid.</p></div>
-  <div class="law"><h3>2.5 Clean diagonals</h3><p>A pixel diagonal steps one pixel at a time. If a corner reads as a jagged staircase, it is wrong.</p></div>
-  <div class="law"><h3>2.6 Match the art's resolution</h3><p>An image placed in the game is resized to the exact box it fills, and its palette is reduced to what that mode allows. The 8-bit mode uses the standard EGA palette, with ordered dithering rather than noisy diffusion. A detail that has turned to speckle after shrinking is redrawn by hand.</p></div>
+<header><p class="label">Rule 2</p><h2>Respect the resolution</h2></header>
+<p>Every project has a native resolution: the grid its art is drawn on, the device pixels of the screen, the size its images were made for. Work on that grid.</p>
+<div class="law"><h3>2.1 Draw on the native grid</h3><p>Everything sits on the project's grid. In pixel art, that is the art-pixel grid at its scale, and that covers sprites, text, frames, scrollbars and arrows alike, with no smooth lines and no browser-rounded corners. On a regular site, it means crisp edges on whole device pixels, with no blurry half-pixel borders.</p>
+</div>
+<div class="law"><h3>2.2 Whole-number scaling only</h3><p>Scale by whole numbers. One art pixel is 2, 3 or 4 screen pixels, never 3.5. If that makes something a little smaller at some window sizes, the smaller size is correct.</p>
+</div>
+<div class="law"><h3>2.3 No half pixels</h3><p>Centring can land something half a pixel off the grid. Round it back onto the grid. Lines and arrowheads land on pixel columns, not between them.</p>
+</div>
+<div class="law"><h3>2.4 Bigger font, not bigger pixels</h3><p>When text needs to be larger, use a <strong>larger font</strong>, not a magnified small one. Never blow up a font, an icon or an image 2× or 3× to make it bigger. It breaks the resolution, even when the result is technically on a grid.</p>
+</div>
+<div class="law"><h3>2.5 Clean diagonals and corners</h3><p>A pixel diagonal steps one pixel at a time. If a corner reads as a jagged staircase, it is wrong.</p>
+</div>
+<div class="law"><h3>2.6 Images fit their box</h3><p>An image is made or resized for the exact box it fills, and for the palette or quality the medium allows. Don't stretch, upscale or shrink it until it turns to noise. A detail that has turned to speckle after shrinking is redrawn.</p>
+<p class="example"><span>Example</span> the 8-bit mode uses the standard EGA palette, with ordered dithering rather than noisy diffusion.</p>
+</div>
 </section>
-
 <section class="frame chapter" id="symbolism">
-  <header><p class="label">Rule 3</p><h2>Respect the symbolism</h2></header>
-  <div class="law"><h3>3.1 One colour, black outline</h3><p>A symbol is one colour with a black outline. No emoji and no multi-colour icons.</p></div>
-  <div class="law"><h3>3.2 Colours mean something</h3><p>A colour that stands for something keeps that meaning everywhere. A side's colour marks that side: <span class="dark">Dark</span>'s box in Dark's colour, <span class="light">Light</span>'s box in Light's colour, and the side's name drawn in it. Neutral things get a neutral colour, like the colour used to show movement. Don't reuse a meaningful colour for decoration, and don't pick a colour that clashes with the frame it sits next to.</p></div>
-  <div class="law"><h3>3.3 Faces and shapes are characters</h3><p>Know what each element is before you draw it. A golem has no teeth and no nose. He looks to the side. His eyes match his piece sprite. Don't add features the character doesn't have, and don't lose the ones it does.</p></div>
-  <div class="law"><h3>3.4 Say what is true</h3><p>A symbol or label means one thing. <code>&lt; &gt;</code> means <code>&lt; &gt;</code>, not the arrow keys. Use arrows for arrow keys. Don't write "click" where people also tap. If an instruction isn't true for every user, leave it out.</p></div>
-  <div class="law"><h3>3.5 Scenes fit their place</h3><p>A picture shows the circumstance it lives in: a battle looks like a battle, and the training yard looks like the training yard.</p></div>
+<header><p class="label">Rule 3</p><h2>Respect the symbolism</h2></header>
+<div class="law"><h3>3.1 Learn the project's language first</h3><p>Before you draw, colour or label anything, find out what the project's colours, shapes, icons and characters already mean. Every project has its own symbolism: a brand colour, a status colour, an icon style, a mascot. Your job is to keep that meaning consistent, not to invent a new one.</p>
+<p class="example"><span>Example</span> in Monster Chess, <span class="light">orange</span> means Light, <span class="dark">magenta</span> means Dark, and <span class="neutral">blue</span> is the neutral colour of movement. <span class="light">Warm orange or yellow</span> for light and <span class="dark">magenta or purple</span> for dark is a pairing that carries well to other projects. On a store site, the same roles might be the brand colour, the sale colour and the neutral UI colour.</p>
+</div>
+<div class="law"><h3>3.2 Colours mean something</h3><p>A colour that stands for something keeps that meaning everywhere. Don't reuse a meaningful colour for decoration. Give neutral things a neutral colour, and don't pick a colour that clashes with what it sits next to.</p>
+<p class="example"><span>Example</span> each side's box is framed in that side's colour, and the side's name is drawn in it. The narrator's box is neutral.</p>
+</div>
+<div class="law"><h3>3.3 One icon style</h3><p>Icons share one consistent style. No emoji and no mixing of icon sets.</p>
+<p class="example"><span>Example</span> Monster Chess icons are one colour with a black outline.</p>
+</div>
+<div class="law"><h3>3.4 Characters stay in character</h3><p>Know what each element is before you draw it. Don't add features a character, logo or mark doesn't have, and don't lose the ones it does.</p>
+<p class="example"><span>Example</span> the golem has no teeth and no nose, looks to the side, and his eyes match his piece sprite.</p>
+</div>
+<div class="law"><h3>3.5 Say what is true</h3><p>A symbol or label means one thing. <code>&lt; &gt;</code> means <code>&lt; &gt;</code>, not the arrow keys. Use arrows for arrow keys. Don't write "click" where people also tap. If an instruction isn't true for every user, leave it out.</p>
+</div>
+<div class="law"><h3>3.6 Pictures fit their place</h3><p>An image shows the context it lives in.</p>
+<p class="example"><span>Example</span> a battle scene looks like a battle, and the training yard looks like the training yard.</p>
+</div>
 </section>
-
 <section class="frame chapter" id="functionality">
-  <header><p class="label">Rule 4</p><h2>Respect the functionality</h2></header>
-  <div class="law"><h3>4.1 Big enough to use</h3><p>On touch screens, or wherever buttons drop below a comfortable tap size, gather them into square tiles: an icon with a small label underneath. Use expandable menus rather than shrinking everything.</p></div>
-  <div class="law"><h3>4.2 Fixed things stay fixed</h3><p>Controls people look for stay in the same place. Back sits fixed at the bottom of a scrollable list, outside the scrolling part, and is still the last item when moving with the keys. A page indicator doesn't move between pages.</p></div>
-  <div class="law"><h3>4.3 Nothing covers what you need</h3><p>Decorations and demos never sit over a menu someone is using. Lines and arrows draw over frames, pieces draw over their selection frame, and nothing hides the piece it marks.</p></div>
-  <div class="law"><h3>4.4 Every mode, every size</h3><p>A change is not done until it works in every mode, including 8-bit, and at every size: wide, tall, phone, not full screen.</p></div>
-  <div class="law"><h3>4.5 Don't drop the feature to fix the look</h3><p>Every action that existed before a layout change still exists after it.</p></div>
+<header><p class="label">Rule 4</p><h2>Respect the functionality</h2></header>
+<div class="law"><h3>4.1 Big enough to use</h3><p>On touch screens, or wherever controls drop below a comfortable tap size, gather them into larger targets: square tiles with an icon and a small label, or expandable menus. Don't shrink everything to make it fit.</p>
+</div>
+<div class="law"><h3>4.2 Fixed things stay fixed</h3><p>Controls people look for stay in the same place. Back sits fixed at the bottom of a scrollable list, outside the scrolling part, and is still the last item when moving with the keys. A page indicator doesn't move between pages.</p>
+</div>
+<div class="law"><h3>4.3 Nothing covers what you need</h3><p>Decorations, banners and demos never sit over a menu someone is using. Highlights and markers never hide the thing they mark.</p>
+<p class="example"><span>Example</span> the move line draws over the selection frame, and the piece draws over its frame.</p>
+</div>
+<div class="law"><h3>4.4 Every mode, every size</h3><p>A change is not done until it works in every mode and theme (dark, light, 8-bit, whatever the project has) and at every size: wide, tall, phone, not full screen.</p>
+</div>
+<div class="law"><h3>4.5 Don't drop the feature to fix the look</h3><p>Every action that existed before a layout change still exists after it.</p>
+</div>
 </section>
-
 <section class="frame checklist" id="checklist">
-  <header class="law"><p class="label">Run on every preview, in every mode and size</p><h2>Before you show anyone</h2></header>
-  <ol>
-    <li>Is there <strong>one gap</strong>, shared between neighbours, measured from the inner edge, and equal horizontally and vertically?</li>
-    <li>Do the sides <strong>mirror</strong>? Do paired boxes have the same size?</li>
-    <li>Does anything <strong>touch, crowd, overlap or poke out</strong> of its frame or column?</li>
-    <li>Is anything <strong>too loose</strong>? Is there an empty strip with no reason?</li>
-    <li>Does every overlay <strong>cover fully or not at all</strong>?</li>
-    <li>Is every pixel on the <strong>grid</strong>, at a <strong>whole-number zoom</strong>, with no magnified fonts and no half pixels?</li>
-    <li>Is every symbol <strong>one colour with a black outline</strong>, and does every colour keep its <strong>meaning</strong>?</li>
-    <li>Does everything still <strong>work</strong>, and is it big enough to press?</li>
-    <li>Did you check the <strong>8-bit</strong> version too?</li>
-  </ol>
-  <p class="closing">If any answer is wrong, fix it before anyone else has to point it out.</p>
+<header class="law"><p class="label">Run on every preview, in every mode and size</p><h2>Before you show anyone</h2></header>
+<ol><li>Is there <strong>one gap</strong>, shared between neighbours, measured from the inner edge, and equal horizontally and vertically?</li><li>Do the sides <strong>mirror</strong>? Do paired boxes have the same size?</li><li>Does anything <strong>touch, crowd, overlap or poke out</strong> of its frame or column?</li><li>Is anything <strong>too loose</strong>? Is there empty space with no reason? Is text centred in its box?</li><li>Does every overlay <strong>cover fully or not at all</strong>?</li><li>Is everything on the <strong>native grid</strong>, at <strong>whole-number scaling</strong>, with no magnified fonts or images and no half pixels?</li><li>Does every colour, icon and character keep its <strong>meaning</strong> in this project?</li><li>Does everything still <strong>work</strong>, and is it big enough to press?</li><li>Did you check <strong>every mode and size</strong>?</li></ol>
+<p class="closing">If any answer is wrong, fix it before anyone else has to point it out.</p>
 </section>
 
 </main>
