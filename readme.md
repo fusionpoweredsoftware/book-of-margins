@@ -88,7 +88,7 @@ An image is made or resized for the exact box it fills, and for the palette or q
 ### 3.1 Learn the project's language first
 Before you draw, colour or label anything, find out what the project's colours, shapes, icons and characters already mean. Every project has its own symbolism: a brand colour, a status colour, an icon style, a mascot. Your job is to keep that meaning consistent, not to invent a new one.
 
-*Example:* in Monster Chess, orange means Light, magenta means Dark, and blue is the neutral colour of movement. Warm orange or yellow for light and magenta or purple for dark is a pairing that carries well to other projects. On a store site, the same roles might be the brand colour, the sale colour and the neutral UI colour.
+*Example:* in Monster Chess, orange means Light, magenta means Dark, and cyan, a light blue, is the neutral colour. Warm orange or yellow for light and magenta or purple for dark is a pairing that carries well to other projects. On a store site, the same roles might be the brand colour, the sale colour and the neutral UI colour.
 
 ### 3.2 Colours mean something
 A colour that stands for something keeps that meaning everywhere. Don't reuse a meaningful colour for decoration. Give neutral things a neutral colour, and don't pick a colour that clashes with what it sits next to.

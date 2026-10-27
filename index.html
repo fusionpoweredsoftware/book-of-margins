@@ -17,7 +17,7 @@
   --line: #1b1f2a;
   --light: #d9731a;   /* Light's orange */
   --dark: #b2338f;    /* Dark's magenta */
-  --move: #2f6fd6;    /* neutral: the colour of movement */
+  --move: #0b8ba3;    /* neutral: cyan */
   --display: "Source Serif 4", Georgia, "Times New Roman", serif;
   --body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
   --g: 24px;          /* the one gap unit */
@@ -25,11 +25,11 @@
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #12151d; --panel: #1a1e29; --fg: #e8eaf0; --muted: #a3a9b8; --line: #e8eaf0;
-  --light: #f08c33; --dark: #d65bb3; --move: #6a9cf0; color-scheme: dark;
+  --light: #f08c33; --dark: #d65bb3; --move: #4fd3e8; color-scheme: dark;
 } }
 :root[data-theme="dark"] {
   --bg: #12151d; --panel: #1a1e29; --fg: #e8eaf0; --muted: #a3a9b8; --line: #e8eaf0;
-  --light: #f08c33; --dark: #d65bb3; --move: #6a9cf0; color-scheme: dark;
+  --light: #f08c33; --dark: #d65bb3; --move: #4fd3e8; color-scheme: dark;
 }
 * { box-sizing: border-box; }
 body {
@@ -145,7 +145,7 @@ footer { text-align: center; color: var(--muted); font-size: 0.85rem; }
 <section class="frame chapter" id="symbolism">
 <header><p class="label">Rule 3</p><h2>Respect the symbolism</h2></header>
 <div class="law"><h3>3.1 Learn the project's language first</h3><p>Before you draw, colour or label anything, find out what the project's colours, shapes, icons and characters already mean. Every project has its own symbolism: a brand colour, a status colour, an icon style, a mascot. Your job is to keep that meaning consistent, not to invent a new one.</p>
-<p class="example"><span>Example</span> in Monster Chess, <span class="light">orange</span> means Light, <span class="dark">magenta</span> means Dark, and <span class="neutral">blue</span> is the neutral colour of movement. <span class="light">Warm orange or yellow</span> for light and <span class="dark">magenta or purple</span> for dark is a pairing that carries well to other projects. On a store site, the same roles might be the brand colour, the sale colour and the neutral UI colour.</p>
+<p class="example"><span>Example</span> in Monster Chess, <span class="light">orange</span> means Light, <span class="dark">magenta</span> means Dark, and <span class="neutral">cyan</span>, a light blue, is the neutral colour. <span class="light">Warm orange or yellow</span> for light and <span class="dark">magenta or purple</span> for dark is a pairing that carries well to other projects. On a store site, the same roles might be the brand colour, the sale colour and the neutral UI colour.</p>
 </div>
 <div class="law"><h3>3.2 Colours mean something</h3><p>A colour that stands for something keeps that meaning everywhere. Don't reuse a meaningful colour for decoration. Give neutral things a neutral colour, and don't pick a colour that clashes with what it sits next to.</p>
 <p class="example"><span>Example</span> each side's box is framed in that side's colour, and the side's name is drawn in it. The narrator's box is neutral.</p>
