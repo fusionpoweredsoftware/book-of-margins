@@ -21,6 +21,8 @@ They are four rules, but this is one book, because the margins tie all four toge
 
 ## Rule 1: Respect the margins
 
+**Margin and padding are the same thing seen from two sides of a border.** Padding is the margin inside a border: the space between the border and what it holds. Margin is the padding outside a border: the space between the border and its neighbours. Both are empty space that keeps things apart, so every rule in this book applies to both. When this book says "margin", it means either one.
+
 ### 1.1 One gap unit
 Pick **one gap** for a layout and use it everywhere: element to element, element to frame, frame to screen edge. A second, different gap needs a reason you can say out loud. If you cannot name it, it is a mistake.
 
